@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.1.1/shaka-player.ui.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.1.1/controls.min.css" crossorigin="anonymous">
-    <link rel="preload" href="https://otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xqqu5jyoti/out/v1/190f1d69a3d5467f8fb7d9df4339bc49/cenc.mpd" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="https://otte.live.fly.ww.aiv-cdn.net/bom-nitro/live/clients/dash/enc/9ekont5e8k/out/v1/e6aaa1b986d0434b95156e22db44eb71/cenc.mpd" as="fetch" crossorigin="anonymous">
 
     <style>
         /* Overflow menu style */
@@ -72,7 +72,7 @@
             o.configure({
                 drm: {
                     clearKeys: {
-                        "d790f0486bf8b693422cfe64d9ed342a": "52fd36bde6820b5c07ce4485642394a8"
+                        "8e73c8415d7648e10b06000b1ace5953": "f5d649bf1495cd0864a7422624ac5a86"
                     }
                 },
                 streaming: {
@@ -110,7 +110,7 @@
 
             // Load the video as quickly as possible
             try {
-                await o.load("https://otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xqqu5jyoti/out/v1/190f1d69a3d5467f8fb7d9df4339bc49/cenc.mpd");
+                await o.load("https://otte.live.fly.ww.aiv-cdn.net/bom-nitro/live/clients/dash/enc/9ekont5e8k/out/v1/e6aaa1b986d0434b95156e22db44eb71/cenc.mpd");
                 console.log("The video has now been loaded instantly!");
             } catch (a) {
                 onPlayerError(a);
