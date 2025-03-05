@@ -147,11 +147,64 @@
         .watch-button:active {
             transform: scale(0.95);
         }
+
         footer {
             margin-top: 20px;
             text-align: center;
             font-size: 14px;
             color: var(--text-color);
+        }
+
+        #popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        .popup-content h2 {
+            margin: 0 0 10px;
+            color: #ff0000;
+        }
+
+        .popup-content p {
+            margin: 0 0 20px;
+        }
+
+        .popup-content button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .popup-content .join-btn {
+            background-color: #ff0000;
+            color: white;
+        }
+
+        .popup-content .close-btn {
+            background-color: #555;
+            color: white;
         }
     </style>
 </head>
@@ -161,6 +214,16 @@
     </div>
     <h1>Fancode Live Matches</h1>
     <div class="match-container" id="matches"></div>
+
+    <div id="popup">
+        <div class="popup-content">
+            <h2>Support Us!</h2>
+            <p>Join our Telegram channel @Shwetank_Singh for more updates.</p>
+            <button class="join-btn" onclick="window.open('https://t.me/+jRAUGRRf3hBkYWQ1', '_blank')">Join Now</button>
+            <button class="close-btn" onclick="closePopup()">Already Joined</button>
+        </div>
+    </div>
+
     <script>
         async function fetchMatches() {
             const response = await fetch('https://raw.githubusercontent.com/drmlive/fancode-live-events/main/fancode.json');
@@ -190,11 +253,21 @@
             window.location.href = url;
         }
 
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        window.onload = function () {
+            setTimeout(() => {
+                document.getElementById("popup").style.display = "flex";
+            }, 3000);
+        };
+
         fetchMatches();
     </script>
-    
-        <footer>
-        &copy; 2025 Bingewav Sports. All rights reserved.
+
+    <footer>
+        &copy; 2025 BingeXshwe7ank Sports. All rights reserved.
     </footer>
 </body>
 </html>
