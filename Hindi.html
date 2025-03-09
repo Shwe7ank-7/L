@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Sports 18 - @Shwe7ank</title>
+    <title>Sports 18- @Shwe7ank</title>
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png" type="image/png" sizes="250x250">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -34,31 +34,25 @@
             window.location.href = "https://t.me/Shwetank_singh";
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             var video = document.getElementById("hls-video");
-            var videoSrc = https:"https://v18tataplaysyndication.akamaized.net/bpk-tv/Sports18_1_HD_voot_MOB/output03/index.m3u8?hdnea=exp=1741508837~acl=/*~hmac=e6de7b930bcd6f272e83525cc2521f4bcac08b2f3e9499437e3bf15f96c335ee";
+            var videoSrc = "https://v18tataplaysyndication.akamaized.net/bpk-tv/Sports18_1_HD_voot_MOB/output03/index.m3u8?hdnea=exp=1741508837~acl=/*~hmac=e6de7b930bcd6f272e83525cc2521f4bcac08b2f3e9499437e3bf15f96c335ee";
 
             if (Hls.isSupported()) {
                 var hls = new Hls();
                 hls.loadSource(videoSrc);
                 hls.attachMedia(video);
-                hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
                     video.play();
-                });
-
-                // Quality selection logging
-                hls.on(Hls.Events.LEVEL_LOADED, function(event, data) {
-                    console.log("Available qualities:", hls.levels.map(level => level.height + "p"));
                 });
             } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
                 video.src = videoSrc;
-                video.addEventListener("loadedmetadata", function() {
+                video.addEventListener("loadedmetadata", function () {
                     video.play();
                 });
             }
 
-            // Fullscreen mode
-            video.addEventListener("dblclick", function() {
+            video.addEventListener("dblclick", function () {
                 if (!document.fullscreenElement) {
                     video.requestFullscreen().catch(err => {
                         console.error(`Error attempting to enable fullscreen: ${err.message}`);
